@@ -1,5 +1,5 @@
 {% set name = "psimpy" %}
-{% set version = "0.2.0" %}
+{% set version = "0.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/psimpy-{{ version }}.tar.gz
-  sha256: e615b424812d0531b924523cfe302fbfd4c31ec6a1b1bb80a5f9c212de44ea49
+  sha256: 3a633a9354fff21ea0f61b2a8d4bc5a2dd41e5b74438fe08af1c3edd77d3b30c
 
 build:
   noarch: python
