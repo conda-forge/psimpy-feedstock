@@ -6,22 +6,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/psimpy-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/psimpy-{{ version }}.tar.gz
   sha256: 3a633a9354fff21ea0f61b2a8d4bc5a2dd41e5b74438fe08af1c3edd77d3b30c
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - poetry-core >=1.0.0
     - pip
   run:
     - r-robustgasp ==0.6.4
-    - python >=3.9
+    - python >={{ python_min }}
     - numpy >1.22.3
     - scipy >1.10.0
     - salib >1.4.5
@@ -36,6 +36,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://git.rwth-aachen.de/mbd/psimpy
