@@ -1,5 +1,5 @@
 {% set name = "psimpy" %}
-{% set version = "0.2.1" %}
+{% set version = "1.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/psimpy-{{ version }}.tar.gz
-  sha256: 3a633a9354fff21ea0f61b2a8d4bc5a2dd41e5b74438fe08af1c3edd77d3b30c
+  sha256: d99609fbc09c50c0d158b932ea3b5bfacf6706235bad987ce2ecaea0f1c0d3bf
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -26,6 +26,7 @@ requirements:
     - scipy >1.10.0
     - salib >1.4.5
     - rpy2 >3.5.1
+    - scikit-learn >=1.4.2,<2
     - beartype >0.11.0
     - setuptools >=69.0.2,<70.0.0
 
